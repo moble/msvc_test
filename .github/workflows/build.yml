@@ -20,6 +20,6 @@ jobs:
     - name: Compile on ${{ matrix.architecture }}
       shell: bash
       run: |
-        cl -I. simple.cpp || print("C++ compilation failed")
+        cl -I. simple.cpp || echo "C++ compilation failed"
         cl -I. simple.c
         ls -la
