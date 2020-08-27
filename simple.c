@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <complex.h>
+#include "config.h"
 #include "fftw3.h"
 
 int main() {
