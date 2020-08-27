@@ -25,7 +25,7 @@ jobs:
       run: |
         cl -I. simple.c
         ls -la
-        simple
+        ./simple
 
     - name: Run it
       run: |
