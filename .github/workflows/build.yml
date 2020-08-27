@@ -23,9 +23,10 @@ jobs:
     - name: Compile on ${{ matrix.architecture }}
       shell: bash
       run: |
-        cl -I. main.c
+        cl -I. simple.c
         ls -la
+        simple
 
     - name: Run it
       run: |
-        main.exe
+        simple
