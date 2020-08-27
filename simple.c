@@ -2,9 +2,9 @@
 #define FFTW_NO_Complex  /* fftw just does `typedef double fftw_complex[2]` */
 #include "fftw3.h"
 
-#ifdef _MSC_VER
+/* #ifdef _MSC_VER */
 #define fftw_complex _Dcomplex
-#endif
+/* #endif */
 
 int main() {
   int m;
