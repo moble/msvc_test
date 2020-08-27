@@ -9,13 +9,15 @@ int main() {
   fftw_complex a = {0.1, 2.3};
   // fftw_complex *c = fftw_malloc(Nm*sizeof(fftw_complex));  /* error C2440: 'initializing': cannot convert from 'void *' to 'fftw_complex (*)' */
   fftw_complex *c = (fftw_complex *) fftw_malloc(Nm*sizeof(fftw_complex));
-  /* fftw_complex c[Nm] = fftw_malloc(Nm*sizeof(fftw_complex)); */  /* error C2057: expected constant expression */
-  /* fftw_complex c[Nm]; */  /* error C2057: expected constant expression */
 
   for (m=0; m<Nm; m++) {
-    c[m] = {0.0, 0.0};  /* error C2059: syntax error: '{' */
+    c[m] = {0.0, 0.0};  /* error C3863: array type 'fftw_complex' is not assignable */
 
-    c[m] = (fftw_complex){0.0, 0.0};  /* error C2106: '=': left operand must be l-value */
+    c[m] = fftw_complex(0.0, 0.0);
+
+    c[m] = fftw_complex({0.0, 0.0});
+
+    c[m] = (fftw_complex){0.0, 0.0};  /* error C4576: a parenthesized type followed by an initializer list is a non-standard explicit type conversion syntax */
 
     c[m][0] = 0.0;  /* works */
     c[m][1] = 0.0;
