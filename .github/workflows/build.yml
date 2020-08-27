@@ -25,4 +25,4 @@ jobs:
       run: |
         cl -I. main.c
         ls -la
-        main
+        main.exe
