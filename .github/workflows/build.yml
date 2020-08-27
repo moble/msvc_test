@@ -16,6 +16,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Compile on ${{ matrix.architecture }}
+      shell: bash
       run: |
         cl.exe main.c
         main
