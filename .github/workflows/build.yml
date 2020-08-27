@@ -23,5 +23,5 @@ jobs:
     - name: Compile on ${{ matrix.architecture }}
       shell: bash
       run: |
-        cl main.c
+        cl -I. main.c
         main
