@@ -1,6 +1,6 @@
 #include <complex.h>
 /* #include "config.h" */
-/* #define FFTW_NO_Complex  /\* with this, fftw just does `typedef double fftw_complex[2]` *\/ */
+#define FFTW_NO_Complex  /* with this, fftw just does `typedef double fftw_complex[2]` */
 #include "fftw3.h"
 
 int main() {
