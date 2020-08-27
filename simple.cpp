@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <complex.h>
+#include <stdio>
+#include <complex>
 #include "fftw3.h"
 
 int main() {
