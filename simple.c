@@ -15,7 +15,7 @@ int main() {
   for (m=0; m<Nm; m++) {
     c[m] = {0.0, 0.0};
   }
-  
+
   printf("Made it to the end.\n");
   return 0;
 }
