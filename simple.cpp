@@ -13,9 +13,9 @@ int main() {
   for (m=0; m<Nm; m++) {
     c[m] = {0.0, 0.0};  /* error C3863: array type 'fftw_complex' is not assignable */
 
-    c[m] = fftw_complex(0.0, 0.0);
+    c[m] = fftw_complex(0.0, 0.0);  /* error C3424: 'fftw_complex': a function-style cast to an array type is not allowed */
 
-    c[m] = fftw_complex({0.0, 0.0});
+    c[m] = fftw_complex({0.0, 0.0});  /* error C3424: 'fftw_complex': a function-style cast to an array type is not allowed */
 
     c[m] = (fftw_complex){0.0, 0.0};  /* error C4576: a parenthesized type followed by an initializer list is a non-standard explicit type conversion syntax */
 
