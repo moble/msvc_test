@@ -7,7 +7,8 @@ int main() {
   int lmax = 8;
   int Nm = 2*lmax+1;
   fftw_complex a = {0.1, 2.3};
-  fftw_complex *c = fftw_malloc(Nm*sizeof(fftw_complex));
+  fftw_complex *c = fftw_malloc(Nm*sizeof(fftw_complex));  /* error C2440: 'initializing': cannot convert from 'void *' to 'fftw_complex (*)' */
+  fftw_complex *c = (fftw_complex *) fftw_malloc(Nm*sizeof(fftw_complex));
   /* fftw_complex c[Nm] = fftw_malloc(Nm*sizeof(fftw_complex)); */  /* error C2057: expected constant expression */
   /* fftw_complex c[Nm]; */  /* error C2057: expected constant expression */
 
