@@ -24,4 +24,5 @@ jobs:
       shell: bash
       run: |
         cl -I. main.c
+        ls -la
         main
