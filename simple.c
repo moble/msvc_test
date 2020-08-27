@@ -1,6 +1,5 @@
 #include <complex.h>
-/* #include "config.h" */
-#define FFTW_NO_Complex  /* with this, fftw just does `typedef double fftw_complex[2]` */
+#define FFTW_NO_Complex  /* fftw just does `typedef double fftw_complex[2]` */
 #include "fftw3.h"
 
 int main() {
@@ -54,7 +53,9 @@ int main() {
 
     /* c[m] = (fftw_complex){0.0, 0.0};  /\* error C2106: '=': left operand must be l-value *\/ */
 
-    c[m] = 1.2 + 3.4 * I;
+    c[m] = _Dcomplex{0.0, 0.0};
+    
+    /* c[m] = 1.2 + 3.4 * I; */  /* error C2088: '*': illegal for struct */
   }
 
   return 0;
