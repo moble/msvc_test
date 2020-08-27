@@ -13,9 +13,12 @@ int main() {
   fftw_complex *c = fftw_malloc(Nm*sizeof(fftw_complex));
 
   for (m=0; m<Nm; m++) {
-    /* c[m] = {0.0, 0.0}; */
-    c[m][0] = 0.0;
-    c[m][1] = 0.0;
+    /* c[m] = {0.0, 0.0}; */  /* Doesn't work */
+
+    /* c[m][0] = 0.0; */  /* works */
+    /* c[m][1] = 0.0; */
+
+    c[m] = (fftw_complex){0.0, 0.0};
   }
 
   printf("Made it to the end.\n");
