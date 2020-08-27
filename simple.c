@@ -16,7 +16,7 @@ int main() {
     /*************************************/
     /* c[m] = {0.0, 0.0}; */  /* error C2059: syntax error: '{' */
 
-    /* c[m][0] = 0.0; */
+    /* c[m][0] = 0.0; */  /* works */
     /* c[m][1] = 0.0; */
 
     /* c[m] = (fftw_complex){0.0, 0.0}; */  /* error C2106: '=': left operand must be l-value */
@@ -27,7 +27,7 @@ int main() {
     /*************************************/
     /* c[m] = {0.0, 0.0}; */  /* error C2059: syntax error: '{' */
 
-    /* c[m][0] = 0.0; */  /* works (but linking fftw_malloc fails) */
+    /* c[m][0] = 0.0; */  /* works */
     /* c[m][1] = 0.0; */
 
     /* c[m] = (fftw_complex){0.0, 0.0}; */  /* error C2106: '=': left operand must be l-value */
@@ -36,23 +36,25 @@ int main() {
     /*************************************/
     /* complex.h; FFTW_NO_Complex        */
     /*************************************/
-    c[m] = {0.0, 0.0};
+    /* c[m] = {0.0, 0.0}; */  /* error C2059: syntax error: '{' */
 
-    c[m][0] = 0.0;
-    c[m][1] = 0.0;
+    /* c[m][0] = 0.0; */  /* works */
+    /* c[m][1] = 0.0; */
 
-    c[m] = (fftw_complex){0.0, 0.0};
+    /* c[m] = (fftw_complex){0.0, 0.0}; */  /* error C2106: '=': left operand must be l-value */
 
 
     /*************************************/
     /* complex.h                         */
     /*************************************/
-    c[m] = {0.0, 0.0};
+    /* c[m] = {0.0, 0.0};  /\* error C2059: syntax error: '{' *\/ */
 
-    c[m][0] = 0.0;
-    c[m][1] = 0.0;
+    /* c[m][0] = 0.0;  /\* works *\/ */
+    /* c[m][1] = 0.0; */
 
-    c[m] = (fftw_complex){0.0, 0.0};
+    /* c[m] = (fftw_complex){0.0, 0.0};  /\* error C2106: '=': left operand must be l-value *\/ */
+
+    c[m] = 1.2 + 3.4 * I;
   }
 
   return 0;
