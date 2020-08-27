@@ -1,4 +1,4 @@
-/* #include <complex.h> */
+#include <complex.h>
 /* #include "config.h" */
 /* #define FFTW_NO_Complex  /\* with this, fftw just does `typedef double fftw_complex[2]` *\/ */
 #include "fftw3.h"
@@ -14,16 +14,16 @@ int main() {
     /*************************************/
     /* no complex.h; no FFTW_NO_Complex  */
     /*************************************/
-    c[m] = {0.0, 0.0};
+    /* c[m] = {0.0, 0.0}; */  /* error C2059: syntax error: '{' */
 
-    c[m][0] = 0.0;
-    c[m][1] = 0.0;
+    /* c[m][0] = 0.0; */
+    /* c[m][1] = 0.0; */
 
-    c[m] = (fftw_complex){0.0, 0.0};
+    /* c[m] = (fftw_complex){0.0, 0.0}; */  /* error C2106: '=': left operand must be l-value */
 
 
     /*************************************/
-    /* No complex.h; FFTW_NO_Complex     */
+    /* no complex.h; FFTW_NO_Complex     */
     /*************************************/
     /* c[m] = {0.0, 0.0}; */  /* error C2059: syntax error: '{' */
 
