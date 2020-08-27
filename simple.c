@@ -8,8 +8,8 @@ int main() {
   int Nm = 2*lmax+1;
   fftw_complex a = {0.1, 2.3};
   /* fftw_complex *c = fftw_malloc(Nm*sizeof(fftw_complex)); */
-  /* fftw_complex c[Nm] = fftw_malloc(Nm*sizeof(fftw_complex)); */
-  fftw_complex c[Nm];
+  fftw_complex c[Nm] = fftw_malloc(Nm*sizeof(fftw_complex));
+  /* fftw_complex c[Nm]; */  /* error C2057: expected constant expression */
 
   for (m=0; m<Nm; m++) {
     /*************************************/
