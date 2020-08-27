@@ -1,4 +1,4 @@
-#include <complex.h>
+#include <complex>
 #define FFTW_NO_Complex  /* fftw just does `typedef double fftw_complex[2]` */
 #include "fftw3.h"
 
