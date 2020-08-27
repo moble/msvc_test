@@ -18,5 +18,5 @@ jobs:
     - name: Compile on ${{ matrix.architecture }}
       shell: bash
       run: |
-        cl.exe main.c
+        "C:\Program Files (x86)\Common Files\Microsoft\Visual C++ for Python\9.0\VC\Bin\cl.exe" main.c
         main
