@@ -17,5 +17,5 @@ jobs:
 
     - name: Compile on ${{ matrix.architecture }}
       run: |
-        cl main.c
+        cl.exe main.c
         main
